@@ -1,0 +1,19 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+      "name": "common-pod-0",
+      "namespace": "default-namespace",
+      "labels": {
+        "app": "common-app",
+        "unique-id": "0"
+      },
+      "annotations": {
+        "description": "This is an example pod with unique metadata."
+      }
+    },
+    "spec": {
+      "containers": []
+    }
+  }
+  

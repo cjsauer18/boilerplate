@@ -1,0 +1,18 @@
+{
+    "name": "common-container",
+    "image": "localhost:32000/common_service_app:latest",
+    "ports": [
+      {
+        "containerPort": 8080,
+        "containerPort": 7040,
+        "containerPort": 8081
+      }
+    ],
+    "command": [
+      "/usr/local/bin/gcia/services/tests/health_reporting_service/common_service"
+    ],
+    "args": [
+      "0"
+    ]
+  }
+  

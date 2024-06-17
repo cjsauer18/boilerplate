@@ -1,0 +1,58 @@
+{
+  "apiVersion": "networking.k8s.io/v1",
+  "kind": "NetworkPolicy",
+  "metadata": {
+    "name": "privileged-namespace-policy",
+    "namespace": "privileged-namespace"
+  },
+  "spec": {
+    "podSelector": {
+      "matchLabels": {}
+    },
+    "policyTypes": [
+      "Ingress",
+      "Egress"
+    ],
+    "ingress": [
+      {
+        "from": [
+          {
+            "podSelector": {
+              "matchLabels": {
+                "access": "allowed"
+              }
+            }
+          }
+        ],
+        "ports": [
+          {
+            "protocol": "TCP",
+            "port": 8081,
+            "port": 7040
+          }
+        ]
+      }
+    ],
+    "egress": [
+      {
+        "to": [
+          {
+            "podSelector": {
+              "matchLabels": {
+                "access": "allowed"
+              }
+            }
+          }
+        ],
+        "ports": [
+          {
+            "protocol": "TCP",
+            "port": 8081,
+            "port": 7040
+
+          }
+        ]
+      }
+    ]
+  }
+}
