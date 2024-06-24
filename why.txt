@@ -1,0 +1,17 @@
+
+Using std::unique_ptr to manage dynamic memory allocation provides several advantages over making copies of objects, especially when dealing with polymorphism and object lifetimes. Here are the key reasons for using std::unique_ptr in this context:
+
+Advantages of Using std::unique_ptr
+Automatic Memory Management: std::unique_ptr ensures that the memory is automatically released when the pointer goes out of scope, preventing memory leaks.
+Polymorphism: std::unique_ptr allows for polymorphic behavior, which means you can store pointers to base class objects and still have them point to derived class objects. This is crucial for factory patterns that return different derived types.
+Efficiency: std::unique_ptr avoids the cost of copying objects, which can be significant for complex or large objects.
+Safety: std::unique_ptr enforces unique ownership semantics, which means that there can only be one std::unique_ptr owning a particular object at any given time. This helps prevent dangling pointers and double deletions.
+When to Use Copies Instead
+If the objects are small, trivially copyable, and you don't need polymorphic behavior, making copies might be simpler and more efficient. For your case, since you are dealing with polymorphic objects and potentially complex data, std::unique_ptr is more appropriate.
+
+
+unique pointers for dynamic memory allocatoin?
+
+also, pointers makes more sense from a program, memory, factory analogy. You made an object,
+ here in the factory, its not real to make or create another to ship out to the customer. You made just the one.
+ also, uniquie pointers supports polymorphism. 
