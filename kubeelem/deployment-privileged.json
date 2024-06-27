@@ -1,0 +1,37 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+      "name": "privileged-app",
+      "namespace": "privileged-namespace"
+    },
+    "spec": {
+      "replicas": 1,
+      "selector": {
+        "matchLabels": {
+          "app": "privileged-app"
+        }
+      },
+      "template": {
+        "metadata": {
+          "labels": {
+            "app": "privileged-app"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "name": "privileged-app-container",
+              "image": "nginx",
+              "ports": [
+                {
+                  "containerPort": 80
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+  
